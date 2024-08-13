@@ -23,13 +23,12 @@ export class CoffeesController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id') id: number) {
     return this.coffeesService.findOne(id);
   }
 
   @Post()
   create(@Body() createCoffeeDto: CreateCoffeeDto) {
-    console.log(createCoffeeDto instanceof CreateCoffeeDto);
     return this.coffeesService.create(createCoffeeDto);
   }
 
@@ -39,7 +38,7 @@ export class CoffeesController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  remove(@Param('id') id: number) {
     return this.coffeesService.remove(id);
   }
 }
